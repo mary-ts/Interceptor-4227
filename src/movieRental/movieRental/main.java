@@ -10,11 +10,12 @@ public class main {
         dis.addInterceptor(inter);
 
         Movie movie = new Movie("Tangled", 2);
-        Movie movie1 = new Movie("Star Wars", 1);
-        Customer customer = new Customer("Ben", dis);
+
+        Customer customer = new Customer("Tamara", dis);
+
         customer.addRental(new Rental(movie, 2));
-        customer.addRental(new Rental(movie1, 2));
         System.out.println(customer.htmlStatement());
+
     }
 }   
     
