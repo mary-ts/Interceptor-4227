@@ -1,15 +1,19 @@
+package movieRental;
 import java.util.Enumeration;
 import java.util.Vector;
 
 class Customer {
     private String _name;
     private Vector _rentals = new Vector();
+
     public Customer(String name) {
     _name = name;
     }
+
     public void addRental(Rental arg) {
     _rentals.addElement(arg);
     }
+
     public String getName() {
         return _name;
     }
@@ -24,8 +28,8 @@ class Customer {
        
         //show figures for each rental
         result += each.getMovie().getTitle()+ ": " + String.valueOf(each.getCharge()) + "<BR>\n";
-       
         }
+
         //add footer lines
         result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
         result += "On this rental you earned <EM>" +
@@ -57,7 +61,7 @@ class Customer {
             result += each.getCharge();
             }
             return result;
-           } 
+        } 
 
 }
     
