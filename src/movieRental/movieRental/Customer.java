@@ -2,16 +2,23 @@ package movieRental;
 import java.util.Enumeration;
 import java.util.Vector;
 
-class Customer {
+import movieRental.Interceptor.ContextObj;
+import movieRental.Interceptor.Dispatcher;
+
+public class Customer {
     private String _name;
     private Vector _rentals = new Vector();
+    public Dispatcher dispatch;
 
-    public Customer(String name) {
-    _name = name;
+    public Customer(String name, Dispatcher dispatch) {
+        _name = name;
+        this.dispatch = dispatch;
     }
 
     public void addRental(Rental arg) {
-    _rentals.addElement(arg);
+        _rentals.addElement(arg);
+        ContextObj obj = new ContextObj(this);
+        dispatch.getObject(obj);
     }
 
     public String getName() {
